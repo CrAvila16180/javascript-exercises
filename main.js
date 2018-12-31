@@ -18,10 +18,9 @@ const html = (number,name,instructions,code) => {
     ins.textContent = instructions;
     section.appendChild(div);
     div.classList.add('code');
-    div.textContent = code
+    div.textContent = code;
 }
 
-html(1, 'Hello World', 'Write a function that returns "Hello, World!', "let helloWorld = () => 'Hello, World!';" )
 
 const ex = (number,name) => {
     log('');
@@ -32,9 +31,11 @@ const ex = (number,name) => {
 
 
 
+html(1, 'Hello World', 'Write a function that returns "Hello, World!', "let helloWorld = () => 'Hello, World!';" )
 
-ex(1, 'Hello World')
+ex(1, 'Hello World');
 
 let helloWorld = () => 'Hello, World!';
 
-log(helloWorld())
+log(helloWorld());
+
