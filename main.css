@@ -27,13 +27,31 @@ header {
 
 article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    
 }
 section {
     border: 2px solid rgba(0, 0, 0, 0.15);
     width: 75%;
-    margin: 10px 25px;
+    margin: 10px auto;
     padding: 10px;
     color: #212121;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    font-size: 2rem;
+}
+section p {
+    font-size: 1.5rem
+}
+
+.code {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    background: #212121;
+    color: greenyellow;
 }
