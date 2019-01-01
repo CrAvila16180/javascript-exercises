@@ -215,3 +215,29 @@ log(factorial(10));
 
 html(8, "Calculator", "The goal for this exercise is to create a calculator that does the following: \n add, subtract, get the sum, multiply, get the power, and find the factorial", "let add = (a,b) => a+b;\n \nlet substract = (a,b) => a-b;\n \nlet sum = (array) => array.reduce((current,total) => total + current, 0);\n \nlet multiply = (array) => array.reduce((current,total) => total * current, 1);\n \nlet power = (a,b) => Math.pow(a,b); \n\nlet factorial = (n) => {\nif (n == 0) return 1;\nlet total = 1;\nfor(i = n; i > 0; i--){\ntotal *= i;\n};\nreturn total;\n};")
 
+//Exercise 9 
+
+ex(9,'Palindromes');
+
+let isPalindrome = (string) => {
+    let originalString = string;
+    let reversedString = reverseString(string);
+    let onlyLetters = (string) => string.replace(/[^a-zA-Z]+/g, '');
+    let originalLetters = (onlyLetters(originalString)).toLowerCase();
+    let reversedLetters = onlyLetters(reversedString).toLowerCase();
+    if ( originalLetters == reversedLetters){
+        return true;
+    } else {
+        return false;
+    }
+};
+
+log(isPalindrome('racecar'));
+log(isPalindrome('Racecar!'));
+log(isPalindrome('A car, a man, a maraca.'));
+log(isPalindrome('Animal loots foliated detail of stool lamina.'));
+log(isPalindrome('ZZZZ car, a man, a maraca.'));
+
+html(9, "Palindromes", "Write a function that determines whether or not a given string is a palindrome.\nA palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks", "let isPalindrome = (string) => {\nlet originalString = string;\nlet reversedString = reverseString(string);\nlet onlyLetters = (string) => string.replace(/[^a-zA-Z]+/g, '');\nlet originalLetters = (onlyLetters(originalString)).toLowerCase();\nlet reversedLetters = onlyLetters(reversedString).toLowerCase();\nif ( originalLetters == reversedLetters){\nreturn true;\n} else {\nreturn false;\n}\n};")
+
+
