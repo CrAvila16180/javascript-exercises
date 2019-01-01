@@ -37,7 +37,7 @@ let helloWorld = () => 'Hello, World!';
 
 log(helloWorld());
 
-html(1, 'Hello World', 'Write a function that returns "Hello, World!', "let helloWorld = () => 'Hello, World!';" );
+html(1, 'Hello World', 'Write a function that returns "Hello, World!.', "let helloWorld = () => 'Hello, World!';" );
 
 //Exercise 2
 
@@ -60,7 +60,7 @@ log(repeatString('hey',1));
 log(repeatString('hey',0));
 log(repeatString('hey',-1));
 
-html(2, 'Repeat a String', 'Write a function that simply repeats the string a given number of times', `let repeatString = (string, times) => {\n let str = '';\nfor(i = 0; i < times; i ++){\nstr += string;\n}\nif(times < 0){\nreturn 'ERROR'\n} else{\nreturn str;\n}\n};`)
+html(2, 'Repeat a String', 'Write a function that simply repeats the string a given number of times.', `let repeatString = (string, times) => {\n let str = '';\nfor(i = 0; i < times; i ++){\nstr += string;\n}\nif(times < 0){\nreturn 'ERROR'\n} else{\nreturn str;\n}\n};`)
 
 //Exercise 3
 
@@ -94,4 +94,33 @@ log(removeFromArray([1, 2, 3, 4], 7,'tacos'));
 log(removeFromArray([1, 2, 3, 4], 1,2,3,4));
 log(removeFromArray(['hey', 2, 3, 'ho'], 'hey', 3));
 
-html(4, "Remove From Array", "Implement a function that takes an array and some other arguments then removes the other arguments from that array", "let removeFromArray = (...items) => {\n const array = items[0];\n return array.filter(val => !items.includes(val)); \n};")
+html(4, "Remove From Array", "Implement a function that takes an array and some other arguments then removes the other arguments from that array.", "let removeFromArray = (...items) => {\n const array = items[0];\n return array.filter(val => !items.includes(val)); \n};")
+
+
+//Exercise 5
+
+ex(5, 'Sum All');
+
+let sumAll = (a,b) => {
+    if( a < 0 || b < 0 || typeof a != 'number' || typeof b != 'number'){
+        return 'ERROR';
+    } else if(a > b){
+        let temp = a;
+        a = b;
+        b = temp;
+    };
+    let sum = 0;
+    for(i = a; i <= b; i++){
+        sum += i;
+    };
+    return sum;
+};
+
+log(sumAll(1, 4));
+log(sumAll(1, 4000));
+log(sumAll(123, 1));
+log(sumAll(-10, 4));
+log(sumAll(10, '90'));
+log(sumAll(10, [90,1]));
+
+html(5, "Sum All", "Implement a function that takes 2 integers and returns the sum of every number between(and including) them.", "let sumAll = (a,b) => { \nif( a < 0 || b < 0 || typeof a != 'number' || typeof b != 'number'){   \nreturn 'ERROR'; \n} else if(a > b){       \nlet temp = a;     \na = b;        \nb = temp; \n};    \nlet sum = 0;  \nfor(i = a; i <= b; i++){      \nsum += i; \n};    \nreturn sum;\n};")
