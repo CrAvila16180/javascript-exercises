@@ -129,17 +129,13 @@ html(5, "Sum All", "Implement a function that takes 2 integers and returns the s
 
 ex(6, 'Leap Years');
 
-let leapYears = (year) => {
-    if(year % 4 == 0 && !(year % 100 == 0 && !(year % 400 == 0))){
-        return true;
-    } else{
-        return false;
-    };
-};
+let leapYears = (year) => (year % 4 == 0 && !(year % 100 == 0 && !(year % 400 == 0)));
 
-log(leapYears(1996))
-log(leapYears(1997))
-log(leapYears(34992))
-log(leapYears(1900))
-log(leapYears(1600))
-log(leapYears(700))
+log(leapYears(1996));
+log(leapYears(1997));
+log(leapYears(34992));
+log(leapYears(1900));
+log(leapYears(1600));
+log(leapYears(700));
+
+html(6, "Leap Years", "Create a function that determines whether or not a given year is a leap year. Leap years are determined by the following rules: \n There is a leap year every year whose number is perfectly divisible by four - except for years which are both divisible by 100 and not divisible by 400. The second part of the rule effects century years. For example; the century years 1600 and 2000 are leap years, but the century years 1700, 1800, and 1900 are not.", "let leapYears = (year) => (year % 4 == 0 && !(year % 100 == 0 && !(year % 400 == 0)));")
