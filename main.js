@@ -142,3 +142,21 @@ html(6, "Leap Years", "Create a function that determines whether or not a given 
 
 //Exercise 7
 
+ex(7, 'Temperature Conversion');
+
+let toC = (f) => (((f - 32) * (5/9))).toFixed(1);
+let toF = (c) => (c * (9/5) + 32).toFixed(1);
+
+let tempConversion = (from,to) => (to == 'toC') ? toC(from): toF(from);
+
+log('F to C')
+console.log(tempConversion(32,'toC'));
+console.log(tempConversion(100,'toC'));
+console.log(tempConversion(-100,'toC'));
+log('');
+log('C to F');
+console.log(tempConversion(0,toF));
+console.log(tempConversion(73.2,toF));
+console.log(tempConversion(-10,toF));
+
+html(7, "Temperature Conversion", "Write two functions that convert temperatures from Fahrenheit to Celsius (and the other way around).", "let toC = (f) => (((f - 32) * (5/9))).toFixed(1);\nlet toF = (c) => (c * (9/5) + 32).toFixed(1);\n \nlet tempConversion = (from,to) => (to == 'toC') ? toC(from): toF(from);")
