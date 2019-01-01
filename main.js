@@ -41,7 +41,7 @@ html(1, 'Hello World', 'Write a function that returns "Hello, World!', "let hell
 
 //Exercise 2
 
-ex(2, 'repeatString');
+ex(2, 'Repeat a String');
 
 let repeatString = (string, times) => {
     let str = '';
@@ -60,7 +60,22 @@ log(repeatString('hey',1));
 log(repeatString('hey',0));
 log(repeatString('hey',-1));
 
-html(2, 'repeatString', 'Write a function that simply repeats the string a given number of times', `let repeatString = (string, times) => {\n let str = '';\nfor(i = 0; i < times; i ++){\nstr += string;\n}\nif(times < 0){\nreturn 'ERROR'\n} else{\nreturn str;\n}\n};`)
+html(2, 'Repeat a String', 'Write a function that simply repeats the string a given number of times', `let repeatString = (string, times) => {\n let str = '';\nfor(i = 0; i < times; i ++){\nstr += string;\n}\nif(times < 0){\nreturn 'ERROR'\n} else{\nreturn str;\n}\n};`)
 
+//Exercise 3
 
+ex(3, 'Reverse a String')
+
+let reverseString = (string) => {
+    let splitString = string.split('');
+    let reverseArray = splitString.reverse();
+    let joinArray = reverseArray.join('');
+    return joinArray;
+};
+
+log(reverseString('hello'));
+log(reverseString('hello there'));
+log(reverseString('123! abc!'));
+
+html(3, "Reverse a string", "Pretty simple, write a function called reverseString that returns it's input, reversed!", "let reverseString = (string) => {\n let splitString = string.split('');\n let reverseArray = splitString.reverse();\n let joinArray = reverseArray.join('');\n return joinArray;\n };")
 
