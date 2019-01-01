@@ -54,4 +54,5 @@ section p {
     margin: 10px;
     background: #212121;
     color: greenyellow;
+    word-wrap: break-word;
 }
