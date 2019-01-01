@@ -79,3 +79,19 @@ log(reverseString('123! abc!'));
 
 html(3, "Reverse a string", "Pretty simple, write a function called reverseString that returns it's input, reversed!", "let reverseString = (string) => {\n let splitString = string.split('');\n let reverseArray = splitString.reverse();\n let joinArray = reverseArray.join('');\n return joinArray;\n };")
 
+//Exercise 4 
+
+ex(4, 'Remove from Array')
+
+let removeFromArray = (...items) => {
+    const array = items[0];
+    return array.filter(val => !items.includes(val));
+};
+
+log(removeFromArray([1, 2, 3, 4], 3));
+log(removeFromArray([1, 2, 3, 4], 3,2));
+log(removeFromArray([1, 2, 3, 4], 7,'tacos'));
+log(removeFromArray([1, 2, 3, 4], 1,2,3,4));
+log(removeFromArray(['hey', 2, 3, 'ho'], 'hey', 3));
+
+html(4, "Remove From Array", "Implement a function that takes an array and some other arguments then removes the other arguments from that array", "let removeFromArray = (...items) => {\n const array = items[0];\n return array.filter(val => !items.includes(val)); \n};")
