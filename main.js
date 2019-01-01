@@ -159,4 +159,59 @@ console.log(tempConversion(0,toF));
 console.log(tempConversion(73.2,toF));
 console.log(tempConversion(-10,toF));
 
-html(7, "Temperature Conversion", "Write two functions that convert temperatures from Fahrenheit to Celsius (and the other way around).", "let toC = (f) => (((f - 32) * (5/9))).toFixed(1);\nlet toF = (c) => (c * (9/5) + 32).toFixed(1);\n \nlet tempConversion = (from,to) => (to == 'toC') ? toC(from): toF(from);")
+html(7, "Temperature Conversion", "Write two functions that convert temperatures from Fahrenheit to Celsius (and the other way around).", "let toC = (f) => (((f - 32) * (5/9))).toFixed(1);\nlet toF = (c) => (c * (9/5) + 32).toFixed(1);\n \nlet tempConversion = (from,to) => (to == 'toC') ? toC(from): toF(from);");
+
+//Exercise 8
+
+ex(8,'Calculator')
+
+let add = (a,b) => a+b;
+
+let substract = (a,b) => a-b;
+
+let sum = (array) => array.reduce((current,total) => total + current, 0);
+
+let multiply = (array) => array.reduce((current,total) => total * current, 1);
+
+let power = (a,b) => Math.pow(a,b);
+
+let factorial = (n) => {
+    if (n == 0) return 1;
+    let total = 1;
+    for(i = n; i > 0; i--){
+        total *= i;
+    };
+    return total;
+  };
+  
+
+log('Add');
+log(add(0,0));
+log(add(2,2));
+log(add(2,6));
+log('')
+log('Substract');
+log(substract(10,4));
+log('')
+log('Sum')
+log(sum([]))
+log(sum([7]))
+log(sum([7,11]))
+log(sum([1,3,5,7,9]))
+log('')
+log('Multiply')
+log(multiply([2,4]))
+log(multiply([2,4,6,8,10,12,14]))
+log('')
+log('Power')
+log(power(4,3));
+log('')
+log('Factorial')
+log(factorial(0));
+log(factorial(1));
+log(factorial(2));
+log(factorial(5));
+log(factorial(10));
+
+html(8, "Calculator", "The goal for this exercise is to create a calculator that does the following: \n add, subtract, get the sum, multiply, get the power, and find the factorial", "let add = (a,b) => a+b;\n \nlet substract = (a,b) => a-b;\n \nlet sum = (array) => array.reduce((current,total) => total + current, 0);\n \nlet multiply = (array) => array.reduce((current,total) => total * current, 1);\n \nlet power = (a,b) => Math.pow(a,b); \n\nlet factorial = (n) => {\nif (n == 0) return 1;\nlet total = 1;\nfor(i = n; i > 0; i--){\ntotal *= i;\n};\nreturn total;\n};")
+
