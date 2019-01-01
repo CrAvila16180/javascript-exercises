@@ -123,4 +123,23 @@ log(sumAll(-10, 4));
 log(sumAll(10, '90'));
 log(sumAll(10, [90,1]));
 
-html(5, "Sum All", "Implement a function that takes 2 integers and returns the sum of every number between(and including) them.", "let sumAll = (a,b) => { \nif( a < 0 || b < 0 || typeof a != 'number' || typeof b != 'number'){   \nreturn 'ERROR'; \n} else if(a > b){       \nlet temp = a;     \na = b;        \nb = temp; \n};    \nlet sum = 0;  \nfor(i = a; i <= b; i++){      \nsum += i; \n};    \nreturn sum;\n};")
+html(5, "Sum All", "Implement a function that takes 2 integers and returns the sum of every number between(and including) them.", "let sumAll = (a,b) => { \nif( a < 0 || b < 0 || typeof a != 'number' || typeof b != 'number'){   \nreturn 'ERROR'; \n} else if(a > b){       \nlet temp = a;     \na = b;        \nb = temp; \n};    \nlet sum = 0;  \nfor(i = a; i <= b; i++){      \nsum += i; \n};    \nreturn sum;\n};");
+
+//Exercise 6 
+
+ex(6, 'Leap Years');
+
+let leapYears = (year) => {
+    if(year % 4 == 0 && !(year % 100 == 0 && !(year % 400 == 0))){
+        return true;
+    } else{
+        return false;
+    };
+};
+
+log(leapYears(1996))
+log(leapYears(1997))
+log(leapYears(34992))
+log(leapYears(1900))
+log(leapYears(1600))
+log(leapYears(700))
