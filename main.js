@@ -220,12 +220,17 @@ html(8, "Calculator", "The goal for this exercise is to create a calculator that
 ex(9,'Palindromes');
 
 let isPalindrome = (string) => {
-    let originalString = string;
-    let reversedString = reverseString(string);
+    let reverseString = (string) => {
+        let splitString = string.split('');
+        let reverseArray = splitString.reverse();
+        let joinArray = reverseArray.join('');
+        return joinArray;
+    };
+
     let onlyLetters = (string) => string.replace(/[^a-zA-Z]+/g, '');
-    let originalLetters = (onlyLetters(originalString)).toLowerCase();
-    let reversedLetters = onlyLetters(reversedString).toLowerCase();
-    if ( originalLetters == reversedLetters){
+    let originalString = (onlyLetters(string)).toLowerCase();
+    let reversedString = onlyLetters(reverseString(string)).toLowerCase();
+    if ( originalString == reversedString){
         return true;
     } else {
         return false;
@@ -238,6 +243,35 @@ log(isPalindrome('A car, a man, a maraca.'));
 log(isPalindrome('Animal loots foliated detail of stool lamina.'));
 log(isPalindrome('ZZZZ car, a man, a maraca.'));
 
-html(9, "Palindromes", "Write a function that determines whether or not a given string is a palindrome.\nA palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks", "let isPalindrome = (string) => {\nlet originalString = string;\nlet reversedString = reverseString(string);\nlet onlyLetters = (string) => string.replace(/[^a-zA-Z]+/g, '');\nlet originalLetters = (onlyLetters(originalString)).toLowerCase();\nlet reversedLetters = onlyLetters(reversedString).toLowerCase();\nif ( originalLetters == reversedLetters){\nreturn true;\n} else {\nreturn false;\n}\n};")
+html(9, "Palindromes", "Write a function that determines whether or not a given string is a palindrome.\nA palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks", "let isPalindrome = (string) => {\nlet originalString = string;\nlet reversedString = reverseString(string);\nlet onlyLetters = (string) => string.replace(/[^a-zA-Z]+/g, '');\nlet originalLetters = (onlyLetters(originalString)).toLowerCase();\nlet reversedLetters = onlyLetters(reversedString).toLowerCase();\nif ( originalLetters == reversedLetters){\nreturn true;\n} else {\nreturn false;\n};\n};")
+
+//exercise 10
+
+ex(10, 'Snake Case');
+
+let snakeCase = (string) => {
+  string = string.replace(/\.\./g, " ");
+
+  if (string.indexOf(" ") < 0) {
+    string = string.replace(/([A-Z])/g, " $1");
+  }
+
+  return string
+                .trim()
+                 .toLowerCase()
+                 .replace(/[,\?\.]/g, "")
+                 .replace(/\-/g, " ")
+                 .split(" ")
+                 .join("_");
+};
+
+log(snakeCase('hello world'));
+log(snakeCase('Hello, World???'));
+log(snakeCase('This is the song that never ends....'));
+log(snakeCase('snakeCase'));
+log(snakeCase('snake-case'));
+log(snakeCase('SnAkE..CaSe..Is..AwEsOmE'));
+
+html(10, 'Snake Case', `Convert phrases and words into snake case Snake case (or snake_case) is the practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, with each element's initial letter usually lowercased as in "foo_bar"`, `\nlet snakeCase = (string) => {\nstring = string.replace(/\.\./g, " ");\n\nif (string.indexOf(" ") < 0) {\nstring = string.replace(/([A-Z])/g, " $1");\n};\n\nreturn string\n.trim()\n.toLowerCase()\n.replace(/[,\?\.]/g, "")\n.replace(/\-/g, " ")\n.split(" ")\n.join("_");\n};`);
 
 
