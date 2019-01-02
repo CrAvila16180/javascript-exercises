@@ -357,6 +357,43 @@ html(11, 'Caesar Cipher', `Exercise XX - caesar cipher \nImplement the legendary
 
   html(12, 'Fibonacci', 'Create a function that returns a specific member of the fibonacci sequence: \n a series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.', `let fibonacci = (pos) => {\nlet position = Number(pos)\nif(pos < 0){\nreturn 'OOPS'\n} else {\nlet init = [0,1]\nfor(i = 2; i < 100; i++){\ninit[i] = (init[i-2] + init[i-1]);\n};\nreturn init[position];\n};\n};`);
 
+//Exercise 13
+
+ex(13, 'Pig Latin');
+
+let pigLatin = (string) => {
+    firstVowelIndex = (string) => {
+        const vowels = string.match(/[aeiou]/g);
+  if (vowels[0] == "u" && string[string.indexOf(vowels[0]) - 1] == "q") {
+    return string.indexOf(vowels[1]);
+  }
+  return string.indexOf(vowels[0]);
+}
+
+
+    return string 
+                 .split(' ')
+                 .map(word => {
+                     const index = firstVowelIndex(word);
+                     const beginning = word.slice(0, index);
+                     const ending = word.slice(index);
+                     return `${ending}${beginning}ay`;
+                 })
+                 .join(' ');
+                
+};
+
+console.log(pigLatin('apple'))
+console.log(pigLatin('a banana'))
+console.log(pigLatin('cherry'))
+console.log(pigLatin('eat pie'))
+console.log(pigLatin('three'))
+console.log(pigLatin('school'))
+console.log(pigLatin('quiet'))
+console.log(pigLatin('square'))
+console.log(pigLatin('the quick brown fox'))
+
+html(13, 'Pig Latin', `Pig Latin is a children's language that is intended to be confusing when spoken quickly. Your job for this exercise is to create a solution that takes the words given and turns them into pig latin. Please see the following wikipedia page for details regarding the rules of Pig Latin:\nhttps://en.wikipedia.org/wiki/Pig_Latin \nThe rules section will give the rules and the examples that are required to complete this exercise.` , pigLatin)
 
 
 
