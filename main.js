@@ -272,6 +272,40 @@ log(snakeCase('snakeCase'));
 log(snakeCase('snake-case'));
 log(snakeCase('SnAkE..CaSe..Is..AwEsOmE'));
 
-html(10, 'Snake Case', `Convert phrases and words into snake case Snake case (or snake_case) is the practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, with each element's initial letter usually lowercased as in "foo_bar"`, `\nlet snakeCase = (string) => {\nstring = string.replace(/\.\./g, " ");\n\nif (string.indexOf(" ") < 0) {\nstring = string.replace(/([A-Z])/g, " $1");\n};\n\nreturn string\n.trim()\n.toLowerCase()\n.replace(/[,\?\.]/g, "")\n.replace(/\-/g, " ")\n.split(" ")\n.join("_");\n};`);
+html(10, 'Snake Case', `Convert phrases and words into snake case Snake case (or snake_case) is the practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, with each element's initial letter usually lowercased as in "foo_bar"`, `let snakeCase = (string) => {\nstring = string.replace(/\.\./g, " ");\n\nif (string.indexOf(" ") < 0) {\nstring = string.replace(/([A-Z])/g, " $1");\n};\n\nreturn string\n.trim()\n.toLowerCase()\n.replace(/[,\?\.]/g, "")\n.replace(/\-/g, " ")\n.split(" ")\n.join("_");\n};`);
+
+//Exercise 11
+
+ex(11, 'Caesar Cipher');
+
+const caesar = function(string, shift) {
+    return string
+      .split("")
+      .map(char => shiftChar(char, shift))
+      .join("");
+  };
+  
+  const codeSet = code => (code < 97 ? 65 : 97);
+  
+  const mod = (n, m) => (n % m + m) % m;
+  
+  const shiftChar = (char, shift) => {
+    const code = char.charCodeAt();
+  
+    if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+      return String.fromCharCode(
+        mod(code + shift - codeSet(code), 26) + codeSet(code)
+      );
+    }
+    return char;
+  };
+  
+
+console.log(caesar('a',1))
+console.log(caesar('Aaa',1))
+console.log(caesar('Hello, World!',5))
+console.log(caesar('Mjqqt, Btwqi!',-5))
+console.log(caesar('Hello, World!',75))
+console.log(caesar('Hello, World!',-29))
 
 
