@@ -308,4 +308,26 @@ console.log(caesar('Mjqqt, Btwqi!',-5))
 console.log(caesar('Hello, World!',75))
 console.log(caesar('Hello, World!',-29))
 
+html(11, 'Caesar Cipher', `Exercise XX - caesar cipher \nImplement the legendary caesar cipher:\nIn cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.`, `const caesar = function(string, shift) {
+    return string
+      .split("")
+      .map(char => shiftChar(char, shift))
+      .join("");
+  };
+  
+  const codeSet = code => (code < 97 ? 65 : 97);
+  
+  const mod = (n, m) => (n % m + m) % m;
+  
+  const shiftChar = (char, shift) => {
+    const code = char.charCodeAt();
+  
+    if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+      return String.fromCharCode(
+        mod(code + shift - codeSet(code), 26) + codeSet(code)
+      );
+    }
+    return char;
+  };`);
+
 
