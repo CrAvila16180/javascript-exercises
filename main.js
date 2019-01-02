@@ -310,9 +310,9 @@ console.log(caesar('Hello, World!',-29))
 
 html(11, 'Caesar Cipher', `Exercise XX - caesar cipher \nImplement the legendary caesar cipher:\nIn cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.`, `const caesar = function(string, shift) {
     return string
-      .split("")
-      .map(char => shiftChar(char, shift))
-      .join("");
+                 .split("")
+                 .map(char => shiftChar(char, shift))
+                 .join("");
   };
   
   const codeSet = code => (code < 97 ? 65 : 97);
@@ -329,5 +329,34 @@ html(11, 'Caesar Cipher', `Exercise XX - caesar cipher \nImplement the legendary
     }
     return char;
   };`);
+
+  //Exercise 12
+
+  ex(12,'Fibonacci');
+
+  let fibonacci = (pos) => {
+      let position = Number(pos)
+      if(pos < 0){
+          return 'OOPS'
+      } else {
+        let init = [0,1]
+        for(i = 2; i < 100; i++){
+          init[i] = (init[i-2] + init[i-1]);
+        };
+        return init[position];
+      };
+  };
+
+  
+  console.log(fibonacci(4))
+  console.log(fibonacci(6))
+  console.log(fibonacci(10))
+  console.log(fibonacci(15))
+  console.log(fibonacci(-25))
+  console.log(fibonacci('8'))
+
+  html(12, 'Fibonacci', 'Create a function that returns a specific member of the fibonacci sequence: \n a series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.', `let fibonacci = (pos) => {\nlet position = Number(pos)\nif(pos < 0){\nreturn 'OOPS'\n} else {\nlet init = [0,1]\nfor(i = 2; i < 100; i++){\ninit[i] = (init[i-2] + init[i-1]);\n};\nreturn init[position];\n};\n};`);
+
+
 
 
