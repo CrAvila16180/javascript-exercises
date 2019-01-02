@@ -37,7 +37,7 @@ let helloWorld = () => 'Hello, World!';
 
 log(helloWorld());
 
-html(1, 'Hello World', 'Write a function that returns "Hello, World!.', "let helloWorld = () => 'Hello, World!';" );
+html(1, 'Hello World', 'Write a function that returns "Hello, World!.', `let helloWorld = ${helloWorld}` );
 
 //Exercise 2
 
@@ -60,7 +60,7 @@ log(repeatString('hey',1));
 log(repeatString('hey',0));
 log(repeatString('hey',-1));
 
-html(2, 'Repeat a String', 'Write a function that simply repeats the string a given number of times.', `let repeatString = (string, times) => {\n let str = '';\nfor(i = 0; i < times; i ++){\nstr += string;\n}\nif(times < 0){\nreturn 'ERROR'\n} else{\nreturn str;\n}\n};`)
+html(2, 'Repeat a String', 'Write a function that simply repeats the string a given number of times.', `let repeatString = ${repeatString}`);
 
 //Exercise 3
 
@@ -77,7 +77,7 @@ log(reverseString('hello'));
 log(reverseString('hello there'));
 log(reverseString('123! abc!'));
 
-html(3, "Reverse a string", "Pretty simple, write a function called reverseString that returns it's input, reversed!", "let reverseString = (string) => {\n let splitString = string.split('');\n let reverseArray = splitString.reverse();\n let joinArray = reverseArray.join('');\n return joinArray;\n };")
+html(3, "Reverse a string", "Pretty simple, write a function called reverseString that returns it's input, reversed!", `let reverseString = ${reverseString}`);
 
 //Exercise 4 
 
@@ -94,8 +94,7 @@ log(removeFromArray([1, 2, 3, 4], 7,'tacos'));
 log(removeFromArray([1, 2, 3, 4], 1,2,3,4));
 log(removeFromArray(['hey', 2, 3, 'ho'], 'hey', 3));
 
-html(4, "Remove From Array", "Implement a function that takes an array and some other arguments then removes the other arguments from that array.", "let removeFromArray = (...items) => {\n const array = items[0];\n return array.filter(val => !items.includes(val)); \n};")
-
+html(4, "Remove From Array", "Implement a function that takes an array and some other arguments then removes the other arguments from that array.", `let removeFromArray = ${removeFromArray}`);
 
 //Exercise 5
 
@@ -123,7 +122,7 @@ log(sumAll(-10, 4));
 log(sumAll(10, '90'));
 log(sumAll(10, [90,1]));
 
-html(5, "Sum All", "Implement a function that takes 2 integers and returns the sum of every number between(and including) them.", "let sumAll = (a,b) => { \nif( a < 0 || b < 0 || typeof a != 'number' || typeof b != 'number'){   \nreturn 'ERROR'; \n} else if(a > b){       \nlet temp = a;     \na = b;        \nb = temp; \n};    \nlet sum = 0;  \nfor(i = a; i <= b; i++){      \nsum += i; \n};    \nreturn sum;\n};");
+html(5, "Sum All", "Implement a function that takes 2 integers and returns the sum of every number between(and including) them.", `let sumAll = ${sumAll}`);
 
 //Exercise 6 
 
@@ -138,8 +137,7 @@ log(leapYears(1900));
 log(leapYears(1600));
 log(leapYears(700));
 
-html(6, "Leap Years", "Create a function that determines whether or not a given year is a leap year. Leap years are determined by the following rules: \n There is a leap year every year whose number is perfectly divisible by four - except for years which are both divisible by 100 and not divisible by 400. The second part of the rule effects century years. For example; the century years 1600 and 2000 are leap years, but the century years 1700, 1800, and 1900 are not.", "let leapYears = (year) => (year % 4 == 0 && !(year % 100 == 0 && !(year % 400 == 0)));");
-
+html(6, "Leap Years", "Create a function that determines whether or not a given year is a leap year. Leap years are determined by the following rules: \n There is a leap year every year whose number is perfectly divisible by four - except for years which are both divisible by 100 and not divisible by 400. The second part of the rule effects century years. For example; the century years 1600 and 2000 are leap years, but the century years 1700, 1800, and 1900 are not.", `let leapYears = ${leapYears}`);
 //Exercise 7
 
 ex(7, 'Temperature Conversion');
@@ -243,8 +241,7 @@ log(isPalindrome('A car, a man, a maraca.'));
 log(isPalindrome('Animal loots foliated detail of stool lamina.'));
 log(isPalindrome('ZZZZ car, a man, a maraca.'));
 
-html(9, "Palindromes", "Write a function that determines whether or not a given string is a palindrome.\nA palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks", "let isPalindrome = (string) => {\nlet originalString = string;\nlet reversedString = reverseString(string);\nlet onlyLetters = (string) => string.replace(/[^a-zA-Z]+/g, '');\nlet originalLetters = (onlyLetters(originalString)).toLowerCase();\nlet reversedLetters = onlyLetters(reversedString).toLowerCase();\nif ( originalLetters == reversedLetters){\nreturn true;\n} else {\nreturn false;\n};\n};")
-
+html(9, "Palindromes", "Write a function that determines whether or not a given string is a palindrome.\nA palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks", `let isPalindrome = ${isPalindrome}`);
 //exercise 10
 
 ex(10, 'Snake Case');
@@ -272,8 +269,7 @@ log(snakeCase('snakeCase'));
 log(snakeCase('snake-case'));
 log(snakeCase('SnAkE..CaSe..Is..AwEsOmE'));
 
-html(10, 'Snake Case', `Convert phrases and words into snake case Snake case (or snake_case) is the practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, with each element's initial letter usually lowercased as in "foo_bar"`, `let snakeCase = (string) => {\nstring = string.replace(/\.\./g, " ");\n\nif (string.indexOf(" ") < 0) {\nstring = string.replace(/([A-Z])/g, " $1");\n};\n\nreturn string\n.trim()\n.toLowerCase()\n.replace(/[,\?\.]/g, "")\n.replace(/\-/g, " ")\n.split(" ")\n.join("_");\n};`);
-
+html(10, 'Snake Case', `Convert phrases and words into snake case Snake case (or snake_case) is the practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, with each element's initial letter usually lowercased as in "foo_bar"`, `let snakeCase = ${snakeCase}`);
 //Exercise 11
 
 ex(11, 'Caesar Cipher');
@@ -355,8 +351,7 @@ html(11, 'Caesar Cipher', `Exercise XX - caesar cipher \nImplement the legendary
   console.log(fibonacci(-25))
   console.log(fibonacci('8'))
 
-  html(12, 'Fibonacci', 'Create a function that returns a specific member of the fibonacci sequence: \n a series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.', `let fibonacci = (pos) => {\nlet position = Number(pos)\nif(pos < 0){\nreturn 'OOPS'\n} else {\nlet init = [0,1]\nfor(i = 2; i < 100; i++){\ninit[i] = (init[i-2] + init[i-1]);\n};\nreturn init[position];\n};\n};`);
-
+  html(12, 'Fibonacci', 'Create a function that returns a specific member of the fibonacci sequence: \n a series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.', `let fibonacci = ${fibonacci}`);
 //Exercise 13
 
 ex(13, 'Pig Latin');
@@ -393,7 +388,7 @@ console.log(pigLatin('quiet'))
 console.log(pigLatin('square'))
 console.log(pigLatin('the quick brown fox'))
 
-html(13, 'Pig Latin', `Pig Latin is a children's language that is intended to be confusing when spoken quickly. Your job for this exercise is to create a solution that takes the words given and turns them into pig latin. Please see the following wikipedia page for details regarding the rules of Pig Latin:\nhttps://en.wikipedia.org/wiki/Pig_Latin \nThe rules section will give the rules and the examples that are required to complete this exercise.` , pigLatin)
+html(13, 'Pig Latin', `Pig Latin is a children's language that is intended to be confusing when spoken quickly. Your job for this exercise is to create a solution that takes the words given and turns them into pig latin. Please see the following wikipedia page for details regarding the rules of Pig Latin:\nhttps://en.wikipedia.org/wiki/Pig_Latin \nThe rules section will give the rules and the examples that are required to complete this exercise.` , `let pigLatin = ${pigLatin}`)
 
 
 
